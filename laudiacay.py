@@ -14,7 +14,6 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
-import re
 from helpers.command import Command
 from helpers.textutils import gen_laudiacay, gen_word
 
@@ -22,14 +21,8 @@ from helpers.textutils import gen_laudiacay, gen_word
 @Command(['laudiacay'])
 def cmd(send, msg, args):
     """Imitates laudiacay.
-    Syntax: !laudiacay (-f|l) <message>
+    Syntax: !laudiacay <message>
     """
     if not msg:
         msg = gen_word()
-    match = re.match('-([lf]) .+', msg)
-    if match:
-        mode = match.group(1)
-        msg = msg[3:]
-    else:
-        mode = None
-    send(gen_laudiacay(msg, mode))
+    send(gen_laudiacay(msg))
