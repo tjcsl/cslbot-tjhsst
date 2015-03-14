@@ -27,9 +27,13 @@ def cmd(send, msg, args):
     if not msg:
         msg = gen_word()
     match = re.match('-([wf]) .+', msg)
+    mode = None
     if match:
         mode = match.group(1)
         msg = msg[3:]
     else:
-        mode = None
+        match = re.match('-([wf])', msg)
+        if match:
+            send("-%s requires an argument." % match.group(1))
+            return
     send(gen_fwilson(msg, mode))
