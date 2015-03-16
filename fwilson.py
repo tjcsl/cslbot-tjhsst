@@ -34,6 +34,6 @@ def cmd(send, msg, args):
     else:
         match = re.match('-([wf])', msg)
         if match:
-            send("-%s requires an argument." % match.group(1))
-            return
+            mode = match.group(1)
+            msg = gen_word()
     send(gen_fwilson(msg, mode))
