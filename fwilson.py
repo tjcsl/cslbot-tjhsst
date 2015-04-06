@@ -14,26 +14,30 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
-import re
 from helpers.command import Command
 from helpers.textutils import gen_fwilson, gen_word
+from helpers import arguments
 
 
-@Command(['fwilson'])
+@Command('fwilson', ['config'])
 def cmd(send, msg, args):
     """Imitates fwilson.
     Syntax: !fwilson (-f|w) <message>
     """
-    if not msg:
-        msg = gen_word()
-    match = re.match('-([wf]) .+', msg)
+    parser = arguments.ArgParser(args['config'])
+    group = parser.add_mutually_exclusive_group()
+    group.add_argument('-f', action='store_true')
+    group.add_argument('-w', action='store_true')
+    parser.add_argument('msg', nargs='*')
+    try:
+        cmdargs = parser.parse_args(msg)
+    except arguments.ArgumentException as e:
+        send(str(e))
+        return
+    msg = " ".join(cmdargs.msg) if cmdargs.msg else gen_word()
     mode = None
-    if match:
-        mode = match.group(1)
-        msg = msg[3:]
-    else:
-        match = re.match('-([wf])', msg)
-        if match:
-            mode = match.group(1)
-            msg = gen_word()
+    if cmdargs.f:
+        mode = 'f'
+    elif cmdargs.w:
+        mode = 'w'
     send(gen_fwilson(msg, mode))
