@@ -14,18 +14,13 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
-from requests import get
 from helpers.command import Command
-from helpers.urlutils import get_title, get_short
-import time
+from helpers.reddit import random_post
 
 
-@Command(['srepetsk'], ['name'])
+@Command(['srepetsk'], ['name', 'config'])
 def cmd(send, msg, args):
-    """Gets a random Reddit post.
-    Syntax: !reddit <subreddit>
+    """Gets a random nottheonion post.
+    Syntax: !srepetsk <subreddit>
     """
-    subreddit = '/r/nottheonion'
-    urlstr = 'http://reddit.com%s/random?%s' % (subreddit, time.time())
-    url = get(urlstr, headers={'User-Agent': 'CslBot/1.0'}).url
-    send('** %s - %s' % (get_title(url), get_short(url)))
+    send(random_post('nottheonion', args['config']['api']['googleapikey']))
