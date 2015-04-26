@@ -15,10 +15,11 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 from helpers.command import Command
+from helpers.misc import ignore
 from helpers.textutils import gen_creffett
 
 
-@Command(['creffett', 'rage'], ['nick', 'target', 'ignore', 'do_kick', 'botnick', 'name'])
+@Command(['creffett', 'rage'], ['nick', 'target', 'db', 'do_kick', 'botnick', 'name'])
 def cmd(send, msg, args):
     """RAGE!!!
     Syntax: !rage <text>
@@ -26,7 +27,7 @@ def cmd(send, msg, args):
     if args['name'] == 'creffett':
         if not args['nick'].startswith('creffett') and args['nick'] != args['botnick']:
             send("You're not creffett!")
-            args['ignore'](args['nick'])
+            send(ignore(args['db'], args['nick']))
             if args['target'] != 'private':
                 args['do_kick'](args['target'], args['nick'], 'creffett impersonation')
             return
