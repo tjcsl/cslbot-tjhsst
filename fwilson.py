@@ -14,9 +14,8 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
-from helpers.command import Command
-from helpers.textutils import gen_fwilson, gen_word
-from helpers import arguments
+from ..helpers.command import Command
+from ..helpers import arguments, textutils
 
 
 @Command('fwilson', ['config'])
@@ -34,10 +33,10 @@ def cmd(send, msg, args):
     except arguments.ArgumentException as e:
         send(str(e))
         return
-    msg = " ".join(cmdargs.msg) if cmdargs.msg else gen_word()
+    msg = " ".join(cmdargs.msg) if cmdargs.msg else textutils.gen_word()
     mode = None
     if cmdargs.f:
         mode = 'f'
     elif cmdargs.w:
         mode = 'w'
-    send(gen_fwilson(msg, mode))
+    send(textutils.gen_fwilson(msg, mode))

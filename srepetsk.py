@@ -14,8 +14,8 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
-from helpers.command import Command
-from helpers.reddit import random_post
+from ..helpers.command import Command
+from ..helpers import reddit
 
 
 @Command(['srepetsk'], ['name', 'config'])
@@ -23,4 +23,4 @@ def cmd(send, msg, args):
     """Gets a random nottheonion post.
     Syntax: !srepetsk <subreddit>
     """
-    send(random_post('nottheonion', args['config']['api']['googleapikey']))
+    send(reddit.random_post('nottheonion', args['config']['api']['googleapikey']))

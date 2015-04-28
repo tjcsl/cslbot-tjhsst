@@ -14,9 +14,8 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
-from helpers.command import Command
-from helpers.misc import ignore
-from helpers.textutils import gen_creffett
+from ..helpers.command import Command
+from ..helpers import misc, textutils
 
 
 @Command(['creffett', 'rage'], ['nick', 'target', 'db', 'do_kick', 'botnick', 'name'])
@@ -27,7 +26,7 @@ def cmd(send, msg, args):
     if args['name'] == 'creffett':
         if not args['nick'].startswith('creffett') and args['nick'] != args['botnick']:
             send("You're not creffett!")
-            send(ignore(args['db'], args['nick']))
+            send(misc.ignore(args['db'], args['nick']))
             if args['target'] != 'private':
                 args['do_kick'](args['target'], args['nick'], 'creffett impersonation')
             return
@@ -35,6 +34,6 @@ def cmd(send, msg, args):
         send("Rage about what?")
         return
     # c.send_raw("MODE %s -c" % CHANNEL)
-    send(gen_creffett(msg))
+    send(textutils.gen_creffett(msg))
     # c.send_raw("MODE %s +c" % CHANNEL)
     send('</rage>')
