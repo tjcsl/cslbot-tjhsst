@@ -14,8 +14,8 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
-from ..helpers.command import Command
-from ..helpers import misc, textutils
+from cslbot.helpers.command import Command
+from cslbot.helpers import misc, textutils
 
 
 @Command(['creffett', 'rage'], ['nick', 'target', 'db', 'do_kick', 'botnick', 'name'])
