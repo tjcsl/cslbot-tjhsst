@@ -1,0 +1,7 @@
+setup.py
+cslbot_tjhsst.egg-info/PKG-INFO
+cslbot_tjhsst.egg-info/SOURCES.txt
+cslbot_tjhsst.egg-info/dependency_links.txt
+cslbot_tjhsst.egg-info/not-zip-safe
+cslbot_tjhsst.egg-info/requires.txt
+cslbot_tjhsst.egg-info/top_level.txt
