@@ -18,7 +18,7 @@ from cslbot.helpers.command import Command
 from cslbot.helpers import arguments, textutils
 
 
-@Command('fwilson', ['config'])
+@Command(['fwilson', 'son'], ['config'])
 def cmd(send, msg, args):
     """Imitates fwilson.
     Syntax: !fwilson (-f|w) <message>
