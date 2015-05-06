@@ -1,3 +1,5 @@
+LICENSE
+MANIFEST.in
 README.rst
 setup.py
 cslbot-tjhsst/__init__.py
