@@ -23,11 +23,13 @@ from cslbot.helpers.command import Command
 @Command(['brain'], limit=1)
 def cmd(send, msg, args):
     """Neural networks!
-    Syntax: !brain
+    Syntax: !brain (latest)
     """
     # FIXME: this whole thing is a god-awful hack
     f = next(reversed((sorted(os.listdir('/home/peter/char-rnn/cv')))))
     send(f)
+    if msg == "latest":
+        return
     seed = str(random.randint(0,100000))
     output = subprocess.check_output(['/home/peter/torch/install/bin/th', 'sample.lua',
         '/home/peter/char-rnn/cv/%s' % f, '-gpuid', '-1', '-seed', seed], cwd='/home/peter/char-rnn').decode('utf-8', 'ignore').splitlines()
