@@ -5,6 +5,7 @@ setup.py
 cslbot-tjhsst/__init__.py
 cslbot-tjhsst/commands/__init__.py
 cslbot-tjhsst/commands/ahamilto.py
+cslbot-tjhsst/commands/brain.py
 cslbot-tjhsst/commands/creffett.py
 cslbot-tjhsst/commands/fwilson.py
 cslbot-tjhsst/commands/srepetsk.py
