@@ -20,7 +20,7 @@ import os
 from cslbot.helpers.command import Command
 
 
-@Command(['brain'], limit=1)
+@Command(['brain'])
 def cmd(send, msg, args):
     """Neural networks!
     Syntax: !brain (latest)
