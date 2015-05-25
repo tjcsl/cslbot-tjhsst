@@ -27,7 +27,10 @@ setup(
     license="GPL",
     zip_safe=False,
     packages=find_packages(),
-    install_requires=['CslBot'],
+    install_requires=[
+        'CslBot',
+        'natsort'
+        ],
     classifiers=[
         'Development Status :: 4 - Beta',
         'License :: OSI Approved :: GNU General Public License v2 or later (GPLv2+)',

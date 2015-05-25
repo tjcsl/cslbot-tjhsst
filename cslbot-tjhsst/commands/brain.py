@@ -17,6 +17,7 @@
 import subprocess
 import random
 import os
+import natsort
 from cslbot.helpers.command import Command
 
 
@@ -26,7 +27,7 @@ def cmd(send, msg, args):
     Syntax: !brain (latest)
     """
     # FIXME: this whole thing is a god-awful hack
-    f = next(reversed((sorted(os.listdir('/home/peter/char-rnn/cv')))))
+    f = next(reversed(natsort.natsorted(os.listdir('/home/peter/char-rnn/cv'))))
     send(f)
     if msg == "latest":
         return
