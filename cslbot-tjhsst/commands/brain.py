@@ -27,7 +27,7 @@ def cmd(send, msg, args):
     Syntax: !brain (latest)
     """
     # FIXME: this whole thing is a god-awful hack
-    f = next(reversed(natsort.natsorted(os.listdir('/home/peter/char-rnn/cv'))))
+    f = natsort.natsorted(os.listdir('/home/peter/char-rnn/cv'))[-1]
     send(f)
     if msg == "latest":
         return
