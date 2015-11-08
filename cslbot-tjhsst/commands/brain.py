@@ -33,6 +33,6 @@ def cmd(send, msg, args):
         return
     seed = str(random.randint(0,100000))
     output = subprocess.check_output(['/home/peter/torch/install/bin/th', 'sample.lua',
-        '/home/peter/char-rnn/cv/%s' % f, '-gpuid', '-1', '-seed', seed], cwd='/home/peter/char-rnn').decode('utf-8', 'ignore').splitlines()
-    for line in output[2:]:
+        '/home/peter/char-rnn/cv/%s' % f, '-verbose', '0', '-seed', seed], cwd='/home/peter/char-rnn').decode('utf-8', 'ignore').splitlines()
+    for line in output:
         send(line.strip(), target=args['nick'])
