@@ -17,13 +17,17 @@
 
 from setuptools import setup, find_packages
 
+with open('README.rst', 'r') as f:
+        long_description = f.read()
+
 setup(
     name="cslbot-tjhsst",
     description="TJHSST-specific commands for CslBot.",
+    long_description=long_description,
     author="The TJHSST Computer Systems Lab",
     author_email="cslbot@pefoley.com",
     url="https://github.com/tjcsl/cslbot-tjhsst",
-    version="0.1",
+    version="0.2",
     license="GPL",
     zip_safe=False,
     packages=find_packages(),
@@ -35,6 +39,7 @@ setup(
         'Development Status :: 4 - Beta',
         'License :: OSI Approved :: GNU General Public License v2 or later (GPLv2+)',
         'Programming Language :: Python :: 3.4',
+        'Programming Language :: Python :: 3.5',
         'Topic :: Communications :: Chat :: Internet Relay Chat',
         ],
 )
