@@ -21,7 +21,7 @@ import natsort
 from cslbot.helpers.command import Command
 
 
-@Command('brain', ['nick'])
+@Command('brain', ['nick'], limit=1)
 def cmd(send, msg, args):
     """Neural networks!
     Syntax: !brain (latest)
