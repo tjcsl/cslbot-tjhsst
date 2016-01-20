@@ -1,4 +1,5 @@
-# Copyright (C) 2013-2014 Fox Wilson, Peter Foley, Srijay Kasturi, Samuel Damashek, James Forcier and Reed Koser
+# -*- coding: utf-8 -*-
+# Copyright (C) 2013-2016 Fox Wilson, Peter Foley, Srijay Kasturi, Samuel Damashek, James Forcier and Reed Koser
 #
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License
@@ -14,12 +15,13 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
-from cslbot.helpers.command import Command
 from random import choice
+
+from cslbot.helpers.command import Command
 
 
 @Command(['ahamilto', 'ahamilton'])
-def cmd(send, msg, args):
+def cmd(send, msg, _):
     """Emulates ahamilto.
     Syntax: !ahamilto (nick)
     """

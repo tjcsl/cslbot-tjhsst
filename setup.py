@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-# Copyright (C) 2013-2015 Samuel Damashek, Peter Foley, James Forcier, Srijay Kasturi, Reed Koser, Christopher Reffett, and Fox Wilson
+# -*- coding: utf-8 -*-
+# Copyright (C) 2013-2016 Samuel Damashek, Peter Foley, James Forcier, Srijay Kasturi, Reed Koser, Christopher Reffett, and Fox Wilson
 #
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License
@@ -15,10 +16,10 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
-from setuptools import setup, find_packages
+from setuptools import find_packages, setup
 
 with open('README.rst', 'r') as f:
-        long_description = f.read()
+    long_description = f.read()
 
 setup(
     name="cslbot-tjhsst",
@@ -34,12 +35,12 @@ setup(
     install_requires=[
         'CslBot',
         'natsort'
-        ],
+    ],
     classifiers=[
         'Development Status :: 4 - Beta',
         'License :: OSI Approved :: GNU General Public License v2 or later (GPLv2+)',
         'Programming Language :: Python :: 3.4',
         'Programming Language :: Python :: 3.5',
         'Topic :: Communications :: Chat :: Internet Relay Chat',
-        ],
+    ],
 )
