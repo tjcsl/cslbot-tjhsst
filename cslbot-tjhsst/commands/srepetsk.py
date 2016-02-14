@@ -22,6 +22,8 @@ from cslbot.helpers.command import Command
 @Command(['srepetsk'], ['name', 'config'])
 def cmd(send, _, args):
     """Gets a random nottheonion post.
+
     Syntax: !srepetsk <subreddit>
+
     """
     send(reddit.random_post('nottheonion', args['config']['api']['googleapikey']))

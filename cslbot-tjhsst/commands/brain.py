@@ -27,7 +27,9 @@ import natsort
 @Command('brain', ['nick'], limit=5)
 def cmd(send, msg, args):
     """Neural networks!
+
     Syntax: !brain (latest)
+
     """
     # FIXME: this whole thing is a god-awful hack
     f = natsort.natsorted(os.listdir('/home/peter/char-rnn/cv'))[-1]

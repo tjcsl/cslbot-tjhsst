@@ -23,7 +23,9 @@ from cslbot.helpers.command import Command
 @Command(['ahamilto', 'ahamilton'])
 def cmd(send, msg, _):
     """Emulates ahamilto.
+
     Syntax: !ahamilto (nick)
+
     """
     sayings = ['ic', '...', 'ic...']
     saying = choice(sayings)

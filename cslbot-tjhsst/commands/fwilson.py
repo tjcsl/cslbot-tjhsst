@@ -22,7 +22,9 @@ from cslbot.helpers.command import Command
 @Command(['fwilson', 'son'], ['config'])
 def cmd(send, msg, args):
     """Imitates fwilson.
+
     Syntax: !fwilson (-f|w) <message>
+
     """
     parser = arguments.ArgParser(args['config'])
     group = parser.add_mutually_exclusive_group()

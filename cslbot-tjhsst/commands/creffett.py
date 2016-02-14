@@ -22,7 +22,9 @@ from cslbot.helpers.command import Command
 @Command(['creffett', 'rage'], ['nick', 'target', 'db', 'do_kick', 'botnick', 'name'])
 def cmd(send, msg, args):
     """RAGE!!!
+
     Syntax: !rage <text>
+
     """
     if args['name'] == 'creffett':
         if not args['nick'].startswith('creffett') and args['nick'] != args['botnick']:
