@@ -15,13 +15,15 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
+import re
 import os
-import random
 import subprocess
 
 from cslbot.helpers.command import Command
 
-import natsort
+_RNN_DIR = '/home/peter/torch-rnn'
+_TH_PATH = '/home/peter/torch/install/bin/th'
+_CHECKPOINT_PATTERN = 'cv/checkpoint_%d.t7'
 
 
 @Command('brain', ['nick'], limit=5)
@@ -32,12 +34,17 @@ def cmd(send, msg, args):
 
     """
     # FIXME: this whole thing is a god-awful hack
-    f = natsort.natsorted(os.listdir('/home/peter/char-rnn/cv'))[-1]
+    latest = 0
+    for f in os.scandir(os.path.join(_RNN_DIR, 'cv')):
+        match = re.match('checkpoint_(\d+).t7', f.name)
+        if match is None:
+            continue
+        latest = max(latest, int(match.group(1)))
     if msg == "latest":
-        send(f)
+        send(latest)
         return
-    seed = str(random.randint(0, 100000))
-    output = subprocess.check_output(['/home/peter/torch/install/bin/th', 'sample.lua',
-                                      '/home/peter/char-rnn/cv/%s' % f, '-verbose', '0', '-seed', seed], cwd='/home/peter/char-rnn').decode('utf-8', 'ignore').splitlines()
-    for line in output:
-        send(line.strip(), target=args['nick'])
+    output = subprocess.check_output([_TH_PATH, 'sample.lua', '-checkpoint', _CHECKPOINT_PATTERN % latest, '-gpu', '-1'], cwd=_RNN_DIR)
+    lines = [line.strip() for line in output.decode('ascii', 'ignore').splitlines()]
+    for line in lines:
+        if line:
+            send(line, target=args['nick'])
