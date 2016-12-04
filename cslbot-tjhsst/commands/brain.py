@@ -41,7 +41,7 @@ def cmd(send, msg, args):
             continue
         latest = max(latest, int(match.group(1)))
     if msg == "latest":
-        send(latest)
+        send(str(latest))
         return
     output = subprocess.check_output([_TH_PATH, 'sample.lua', '-checkpoint', _CHECKPOINT_PATTERN % latest, '-gpu', '-1'], cwd=_RNN_DIR)
     lines = [line.strip() for line in output.decode('ascii', 'ignore').splitlines()]
