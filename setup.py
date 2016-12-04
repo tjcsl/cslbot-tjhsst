@@ -32,6 +32,7 @@ setup(
     license="GPL",
     zip_safe=False,
     packages=find_packages(),
+    setup_requires=['setuptools_git'],
     install_requires=['CslBot'],
     classifiers=[
         'Development Status :: 4 - Beta',
