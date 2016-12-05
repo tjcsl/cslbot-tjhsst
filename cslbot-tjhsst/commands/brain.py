@@ -43,9 +43,9 @@ def cmd(send, msg, args):
     if msg == "latest":
         send(str(latest))
         return
+    send("Sampling output at checkpoint %d" % latest)
     output = subprocess.check_output([_TH_PATH, 'sample.lua', '-checkpoint', _CHECKPOINT_PATTERN % latest, '-gpu', '-1'], cwd=_RNN_DIR)
     lines = [line.strip() for line in output.decode('ascii', 'ignore').splitlines()]
     lines = [line for line in lines if line]
-    send("Sampling output at checkpoint %d" % latest)
     for line in lines:
         send(line, target=args['nick'])
