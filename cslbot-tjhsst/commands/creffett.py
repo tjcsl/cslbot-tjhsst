@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Copyright (C) 2013-2016 Fox Wilson, Peter Foley, Srijay Kasturi, Samuel Damashek, James Forcier and Reed Koser
+# Copyright (C) 2013-2018 Tris Wilson, Peter Foley, Srijay Kasturi, Samuel Damashek, James Forcier and Reed Koser
 #
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License
