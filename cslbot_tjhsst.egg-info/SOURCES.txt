@@ -5,10 +5,10 @@ README.rst
 setup.py
 cslbot-tjhsst/__init__.py
 cslbot-tjhsst/commands/__init__.py
-cslbot-tjhsst/commands/ahamilto.py
 cslbot-tjhsst/commands/brain.py
 cslbot-tjhsst/commands/creffett.py
 cslbot-tjhsst/commands/fwilson.py
+cslbot-tjhsst/commands/sigmawp.py
 cslbot-tjhsst/commands/srepetsk.py
 cslbot_tjhsst.egg-info/PKG-INFO
 cslbot_tjhsst.egg-info/SOURCES.txt
