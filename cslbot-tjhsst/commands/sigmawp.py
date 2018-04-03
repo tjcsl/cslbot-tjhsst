@@ -20,7 +20,7 @@ import random
 from cslbot.helpers.command import Command
 
 
-@Command(['SigmaWP', 'Sigma'])
+@Command(['sigmawp', 'sigma'])
 def cmd(send, *_):
     """Imitates SigmaWP.
 
