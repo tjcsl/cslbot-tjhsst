@@ -27,4 +27,4 @@ def cmd(send, *_):
     Syntax: !SigmaWP
 
     """
-    send(random.choice(["oh no", "dumb fucks"]))
+    send(random.choice(["oh no", "dumb fucks", "zucced"]))
