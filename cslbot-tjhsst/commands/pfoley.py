@@ -19,6 +19,11 @@ import random
 
 from cslbot.helpers.command import Command
 
+import feedparser
+import random
+
+ARS_FEED_URL = "https://feeds.feedburner.com/arstechnica/index"
+
 
 @Command(['pfoley'])
 def cmd(send, *_):
@@ -27,4 +32,9 @@ def cmd(send, *_):
     Syntax: !pfoley
 
     """
-    send(random.choice(["ok, and?", ":P"]))
+    if random.random() < 0.5:
+        send("ok, and?")
+    else:
+        feed = feedparser.parse(ARS_FEED_URL)
+        entry = random.choice(feed['entries'])
+        send('{} - {}'.format(entry['link'], entry['title']))
