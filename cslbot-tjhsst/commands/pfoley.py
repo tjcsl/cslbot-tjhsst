@@ -25,4 +25,4 @@ def cmd(send, *_):
     Syntax: !pfoley
 
     """
-    send("ok, and?")
+    send(random.choice(["ok, and?", ":P"]))
