@@ -21,31 +21,26 @@ import subprocess
 
 from cslbot.helpers.command import Command
 
-_RNN_DIR = '/home/peter/torch-rnn'
-_TH_PATH = '/home/peter/torch/install/bin/th'
-_CHECKPOINT_PATTERN = 'cv/checkpoint_%d.t7'
+_RNN_DIR = '/home/peter/char-rnn-tensorflow'
+_CHECKPOINT_PATTERN = 'save/model.ckpt-%d.index'
 
 
 @Command('brain', ['nick'], limit=5)
 def cmd(send, msg, args):
     """Neural networks!
 
-    Syntax: !brain (latest)
+    Syntax: !brain
 
     """
     # FIXME: this whole thing is a god-awful hack
     latest = 0
-    for f in os.scandir(os.path.join(_RNN_DIR, 'cv')):
-        match = re.match('checkpoint_(\d+).t7', f.name)
+    for f in os.scandir(os.path.join(_RNN_DIR, 'save')):
+        match = re.match(r'model.ckpt-(\d+).index', f.name)
         if match is None:
             continue
         latest = max(latest, int(match.group(1)))
-    if msg == "latest":
-        send(str(latest))
-        return
     send("Sampling output at checkpoint %d" % latest)
-    output = subprocess.check_output([_TH_PATH, 'sample.lua', '-checkpoint', _CHECKPOINT_PATTERN % latest, '-gpu', '-1'], cwd=_RNN_DIR)
-    lines = [line.strip() for line in output.decode('ascii', 'ignore').splitlines()]
-    lines = [line for line in lines if line]
-    for line in lines:
+    output = subprocess.check_output(
+        [os.path.join(_RNN_DIR, 'sample.py')], cwd=_RNN_DIR, universal_newlines=True)
+    for line in output.splitlines():
         send(line, target=args['nick'])
