@@ -40,7 +40,6 @@ def cmd(send, msg, args):
             continue
         latest = max(latest, int(match.group(1)))
     send("Sampling output at checkpoint %d" % latest)
-    output = subprocess.check_output(
-        [os.path.join(_RNN_DIR, 'sample.py')], cwd=_RNN_DIR, universal_newlines=True)
+    output = subprocess.check_output([os.path.join(_RNN_DIR, 'sample.py')], cwd=_RNN_DIR, universal_newlines=True)
     for line in output.splitlines():
         send(line, target=args['nick'])
