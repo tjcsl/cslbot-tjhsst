@@ -21,25 +21,27 @@ import subprocess
 
 from cslbot.helpers.command import Command
 
-_RNN_DIR = '/home/peter/char-rnn-tensorflow'
-_CHECKPOINT_PATTERN = 'save/model.ckpt-%d.index'
+_RNN_DIR = '/home/peter/cslbot-tjhsst'
 
 
 @Command('brain', ['nick'], limit=5)
 def cmd(send, msg, args):
     """Neural networks!
 
-    Syntax: !brain
+    Syntax: !brain <seed>
 
     """
+    if not msg:
+        send("Must specify a seed.")
+        return
     # FIXME: this whole thing is a god-awful hack
     latest = 0
-    for f in os.scandir(os.path.join(_RNN_DIR, 'save')):
-        match = re.match(r'model.ckpt-(\d+).index', f.name)
+    for f in os.scandir(os.path.join(_RNN_DIR, 'checkpoint')):
+        match = re.match(r'ckpt_(\d+).index', f.name)
         if match is None:
             continue
         latest = max(latest, int(match.group(1)))
     send("Sampling output at checkpoint %d" % latest)
-    output = subprocess.check_output([os.path.join(_RNN_DIR, 'sample.py')], cwd=_RNN_DIR, universal_newlines=True)
+    output = subprocess.check_output([os.path.join(_RNN_DIR, 'rnn.py'), 'sample', msg], cwd=_RNN_DIR, universal_newlines=True)
     for line in output.splitlines():
         send(line, target=args['nick'])

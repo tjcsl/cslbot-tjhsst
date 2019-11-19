@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/local/virtualenvs/cslbot/bin/python
 # Based on https://www.tensorflow.org/tutorials/text/text_generation
 # Input built via:
 # psql ircbot -c 'select msg from log' | head -n -2 | tail -n +3 > irc.txt
@@ -10,13 +10,14 @@ import tensorflow as tf
 import numpy as np
 import argparse
 import os
+import sys
 
 # Read, then decode for py2 compat.
 with open('irc.txt', 'rb') as f:
     text = f.read().decode(encoding='utf-8')
 
 # length of text is the number of characters in it
-print('Length of text: {} characters'.format(len(text)))
+print('Length of text: {} characters'.format(len(text)), file=sys.stderr)
 
 # The unique characters in the file
 vocab = sorted(set(text))
@@ -133,7 +134,7 @@ def generate_text(model, start_string):
 
         text_generated.append(idx2char[predicted_id])
 
-    return (start_string + ''.join(text_generated))
+    return ''.join(text_generated)
 
 
 def sample(seed):
