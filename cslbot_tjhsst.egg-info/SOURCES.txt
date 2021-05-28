@@ -1,5 +1,6 @@
 .gitignore
 .pep8
+.style.yapf
 LICENSE
 README.rst
 rnn.py
