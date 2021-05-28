@@ -1,4 +1,4 @@
-Metadata-Version: 1.1
+Metadata-Version: 2.1
 Name: cslbot-tjhsst
 Version: 0.4
 Summary: TJHSST-specific commands for CslBot.
@@ -6,21 +6,24 @@ Home-page: https://github.com/tjcsl/cslbot-tjhsst
 Author: The TJHSST Computer Systems Lab
 Author-email: cslbot@pefoley.com
 License: GPL
-Description: cslbot-tjhsst
-        =============
-        
-        tjhsst-specific commands for http://github.com/tjcsl/cslbot
-        
-        
-        To install:
-        
-            pip install git+git://github.com/tjcsl/cslbot-tjhsst
-        
-            add "extramodules: cslbot-tjhsst" to the [core] section of config.cfg
-        
 Platform: UNKNOWN
 Classifier: Development Status :: 4 - Beta
 Classifier: License :: OSI Approved :: GNU General Public License v2 or later (GPLv2+)
 Classifier: Programming Language :: Python :: 3.4
 Classifier: Programming Language :: Python :: 3.5
 Classifier: Topic :: Communications :: Chat :: Internet Relay Chat
+License-File: LICENSE
+
+cslbot-tjhsst
+=============
+
+tjhsst-specific commands for http://github.com/tjcsl/cslbot
+
+
+To install:
+
+    pip install git+git://github.com/tjcsl/cslbot-tjhsst
+
+    add "extramodules: cslbot-tjhsst" to the [core] section of config.cfg
+
+

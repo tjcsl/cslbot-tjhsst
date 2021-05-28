@@ -1,1 +1,2 @@
 CslBot
+feedparser
