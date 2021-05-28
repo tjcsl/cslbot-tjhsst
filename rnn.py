@@ -1,16 +1,14 @@
-#!/usr/local/virtualenvs/cslbot/bin/python
+#!/usr/bin/env python
 # Based on https://www.tensorflow.org/tutorials/text/text_generation
 # Input built via:
 # psql ircbot -c 'select msg from log' | head -n -2 | tail -n +3 > irc.txt
 
-from __future__ import absolute_import, division, print_function, unicode_literals
-
-import tensorflow as tf
-
-import numpy as np
 import argparse
 import os
 import sys
+
+import numpy as np
+import tensorflow as tf
 
 # Read, then decode for py2 compat.
 with open('irc.txt', 'rb') as f:
