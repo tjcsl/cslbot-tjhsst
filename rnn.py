@@ -94,7 +94,7 @@ def train():
     checkpoint_callback = tf.keras.callbacks.ModelCheckpoint(filepath=checkpoint_prefix, save_weights_only=True)
 
     # Train the model.
-    model.fit(dataset, epochs=EPOCHS, verbose=2, callbacks=[checkpoint_callback])
+    model.fit(dataset, epochs=EPOCHS, callbacks=[checkpoint_callback])
 
 
 # Evaluation step (generating text using the learned model)
