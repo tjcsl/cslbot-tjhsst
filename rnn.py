@@ -139,7 +139,10 @@ def sample(seed):
     # Load the trained model.
     model = build_model(vocab_size, embedding_dim, rnn_units, batch_size=1)
 
-    model.load_weights(tf.train.latest_checkpoint(checkpoint_dir)).expect_partial()
+    ckpt = tf.train.latest_checkpoint(checkpoint_dir)
+    if not ckpt:
+        raise Exception('No checkpoint found in %s' % checkpoint_dir)
+    model.load_weights(ckpt).expect_partial()
 
     model.build(tf.TensorShape([1, None]))
 
