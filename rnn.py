@@ -134,12 +134,10 @@ class OneStep(tf.keras.Model):
     # Low temperatures results in more predictable text.
     # Higher temperatures results in more surprising text.
     # Experiment to find the best setting.
-    def __init__(self, model, chars_from_ids, ids_from_chars, temperature=1.0):
+    def __init__(self, model, temperature=1.0):
         super().__init__()
         self.temperature = temperature
         self.model = model
-        self.chars_from_ids = chars_from_ids
-        self.ids_from_chars = ids_from_chars
 
         # Create a mask to prevent "[UNK]" from being generated.
         skip_ids = self.ids_from_chars(['[UNK]'])[:, None]
@@ -179,7 +177,7 @@ class OneStep(tf.keras.Model):
 
 # Evaluation step (generating text using the learned model)
 def generate_text(model, start_string):
-    one_step_model = OneStep(model, chars_from_ids, ids_from_chars)
+    one_step_model = OneStep(model)
 
     states = None
     next_char = tf.constant([start_string])
