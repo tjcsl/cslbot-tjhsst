@@ -140,7 +140,7 @@ class OneStep(tf.keras.Model):
         self.model = model
 
         # Create a mask to prevent "[UNK]" from being generated.
-        skip_ids = self.ids_from_chars(['[UNK]'])[:, None]
+        skip_ids = ids_from_chars(['[UNK]'])[:, None]
         sparse_mask = tf.SparseTensor(
             # Put a -inf at each bad index.
             values=[-float('inf')] * len(skip_ids),
@@ -201,7 +201,7 @@ def sample(seed):
     ckpt = tf.train.latest_checkpoint(checkpoint_dir)
     if not ckpt:
         raise Exception('No checkpoint found in %s' % checkpoint_dir)
-    model.load_weights(ckpt).assert_consumed()
+    model.load_weights(ckpt).expect_partial()
 
     start = ' '.join(seed)
     if not start:
