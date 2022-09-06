@@ -3,6 +3,7 @@
 .style.yapf
 LICENSE
 README.rst
+pyproject.toml
 rnn.py
 setup.py
 cslbot-tjhsst/__init__.py

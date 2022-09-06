@@ -31,7 +31,6 @@ setup(name="cslbot-tjhsst",
       license="GPL",
       zip_safe=False,
       packages=find_packages(),
-      setup_requires=['setuptools_git'],
       install_requires=['CslBot', 'feedparser', 'tensorflow'],
       classifiers=[
           'Development Status :: 4 - Beta',

@@ -6,7 +6,6 @@ Home-page: https://github.com/tjcsl/cslbot-tjhsst
 Author: The TJHSST Computer Systems Lab
 Author-email: cslbot@pefoley.com
 License: GPL
-Platform: UNKNOWN
 Classifier: Development Status :: 4 - Beta
 Classifier: License :: OSI Approved :: GNU General Public License v2 or later (GPLv2+)
 Classifier: Programming Language :: Python :: 3.4
@@ -25,5 +24,3 @@ To install:
     pip install git+git://github.com/tjcsl/cslbot-tjhsst
 
     add "extramodules: cslbot-tjhsst" to the [core] section of config.cfg
-
-
