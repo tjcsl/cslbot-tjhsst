@@ -6,6 +6,9 @@ readme = "README.rst"
 description = "TJHSST-Specific modifications for cslbot."
 repository = "https://github.com/tjcsl/cslbot-tjhsst"
 authors = ["The TJHSST Computer Systems Lab <cslbot@pefoley.com>"]
+packages = [
+  { include = "cslbot-tjhsst" },
+]
 
 [tool.poetry.dependencies]
 python = ">=3.9,<3.11"
