@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "cslbot-tjhsst"
-version = "0.1.0"
+version = "0.4"
 license = "GPL-2.0-or-later"
 readme = "README.rst"
 description = "TJHSST-Specific modifications for cslbot."
