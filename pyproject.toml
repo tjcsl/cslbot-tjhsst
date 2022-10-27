@@ -13,6 +13,7 @@ packages = [
 [tool.poetry.dependencies]
 python = ">=3.8,<3.11"
 tensorflow = "^2.10.0"
+feedparser = "^6.0.10"
 
 [tool.poetry.dev-dependencies]
 poetry = "^1.2.2"
