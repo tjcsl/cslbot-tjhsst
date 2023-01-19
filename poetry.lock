@@ -48,18 +48,6 @@ tests = ["attrs[tests-no-zope]", "zope.interface"]
 tests-no-zope = ["cloudpickle", "cloudpickle", "hypothesis", "hypothesis", "mypy (>=0.971,<0.990)", "mypy (>=0.971,<0.990)", "pympler", "pympler", "pytest (>=4.3.0)", "pytest (>=4.3.0)", "pytest-mypy-plugins", "pytest-mypy-plugins", "pytest-xdist[psutil]", "pytest-xdist[psutil]"]
 
 [[package]]
-name = "backports-cached-property"
-version = "1.0.2"
-description = "cached_property() - computed once per instance, cached as attribute"
-category = "dev"
-optional = false
-python-versions = ">=3.6.0"
-files = [
-    {file = "backports.cached-property-1.0.2.tar.gz", hash = "sha256:9306f9eed6ec55fd156ace6bc1094e2c86fae5fb2bf07b6a9c00745c656e75dd"},
-    {file = "backports.cached_property-1.0.2-py3-none-any.whl", hash = "sha256:baeb28e1cd619a3c9ab8941431fe34e8490861fb998c6c4590693d50171db0cc"},
-]
-
-[[package]]
 name = "cachecontrol"
 version = "0.12.11"
 description = "httplib2 caching for requests"
@@ -698,7 +686,6 @@ files = [
 ]
 
 [package.dependencies]
-typing-extensions = {version = ">=3.6.4", markers = "python_version < \"3.8\""}
 zipp = ">=0.5"
 
 [package.extras]
@@ -774,11 +761,9 @@ files = [
 
 [package.dependencies]
 attrs = ">=17.4.0"
-importlib-metadata = {version = "*", markers = "python_version < \"3.8\""}
 importlib-resources = {version = ">=1.4.0", markers = "python_version < \"3.9\""}
 pkgutil-resolve-name = {version = ">=1.3.10", markers = "python_version < \"3.9\""}
 pyrsistent = ">=0.14.0,<0.17.0 || >0.17.0,<0.17.1 || >0.17.1,<0.17.2 || >0.17.2"
-typing-extensions = {version = "*", markers = "python_version < \"3.8\""}
 
 [package.extras]
 format = ["fqdn", "idna", "isoduration", "jsonpointer (>1.13)", "rfc3339-validator", "rfc3987", "uri-template", "webcolors (>=1.11)"]
@@ -1142,9 +1127,6 @@ files = [
     {file = "platformdirs-2.6.2.tar.gz", hash = "sha256:e1fea1fe471b9ff8332e229df3cb7de4f53eeea4998d3b6bfff542115e998bd2"},
 ]
 
-[package.dependencies]
-typing-extensions = {version = ">=4.4", markers = "python_version < \"3.8\""}
-
 [package.extras]
 docs = ["furo (>=2022.12.7)", "proselint (>=0.13)", "sphinx (>=5.3)", "sphinx-autodoc-typehints (>=1.19.5)"]
 test = ["appdirs (==1.4.4)", "covdefaults (>=2.2.2)", "pytest (>=7.2)", "pytest-cov (>=4)", "pytest-mock (>=3.10)"]
@@ -1162,7 +1144,6 @@ files = [
 ]
 
 [package.dependencies]
-"backports.cached-property" = {version = ">=1.0.2,<2.0.0", markers = "python_version < \"3.8\""}
 cachecontrol = {version = ">=0.12.9,<0.13.0", extras = ["filecache"]}
 cleo = ">=2.0.0,<3.0.0"
 crashtest = ">=0.4.1,<0.5.0"
@@ -1203,9 +1184,6 @@ files = [
     {file = "poetry_core-1.4.0-py3-none-any.whl", hash = "sha256:5559ab80384ac021db329ef317086417e140ee1176bcfcb3a3838b544e213c8e"},
     {file = "poetry_core-1.4.0.tar.gz", hash = "sha256:514bd33c30e0bf56b0ed44ee15e120d7e47b61ad908b2b1011da68c48a84ada9"},
 ]
-
-[package.dependencies]
-importlib-metadata = {version = ">=1.7.0", markers = "python_version < \"3.8\""}
 
 [[package]]
 name = "poetry-plugin-export"
@@ -1883,7 +1861,6 @@ files = [
 [package.dependencies]
 distlib = ">=0.3.6,<1"
 filelock = ">=3.4.1,<4"
-importlib-metadata = {version = ">=4.8.3", markers = "python_version < \"3.8\""}
 platformdirs = ">=2.4,<3"
 
 [package.extras]
@@ -2112,5 +2089,5 @@ testing = ["flake8 (<5)", "func-timeout", "jaraco.functools", "jaraco.itertools"
 
 [metadata]
 lock-version = "2.0"
-python-versions = ">=3.7,<4.0"
-content-hash = "65330c2b09da8f91f36022aa407fb78d2028a24577b480d5e743b1de47c19e5b"
+python-versions = ">=3.8,<4.0"
+content-hash = "cba5fd9d334290c29d68647ccad2548be716f00fc3872ed88f03fdf7c19ed707"
