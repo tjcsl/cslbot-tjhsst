@@ -16,7 +16,7 @@ tensorflow = "^2.13.0"
 feedparser = "^6.0.10"
 
 [tool.poetry.dev-dependencies]
-poetry = "^1.5.1"
+poetry = "^1.6.1"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
