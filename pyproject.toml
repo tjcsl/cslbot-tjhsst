@@ -1,22 +1,28 @@
-[tool.poetry]
+[project]
 name = "cslbot-tjhsst"
 version = "0.4"
 license = "GPL-2.0-or-later"
 readme = "README.rst"
 description = "TJHSST-Specific modifications for cslbot."
-repository = "https://github.com/tjcsl/cslbot-tjhsst"
-authors = ["The TJHSST Computer Systems Lab <cslbot@pefoley.com>"]
+authors = [
+  {name = "The TJHSST Computer Systems Lab", email = "cslbot@pefoley.com"},
+]
+requires-python = ">=3.12"
+dependencies = [
+    "feedparser>=6.0.14",
+    "tensorflow>=2.21.0"
+]
+
+[project.urls]
+Repository = "https://github.com/tjcsl/cslbot-tjhsst"
+
+[tool.poetry]
 packages = [
   { include = "cslbot-tjhsst" },
 ]
 
 [tool.poetry.dependencies]
-python = ">=3.11,<3.15"
-tensorflow = "^2.21.0"
-feedparser = "^6.0.14"
-
-[tool.poetry.group.dev.dependencies]
-poetry = "^2.4.1"
+tensorflow = {allow-prereleases = true}
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
