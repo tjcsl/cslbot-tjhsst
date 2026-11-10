@@ -8,6 +8,11 @@ resolution-markers = [
     "python_full_version < '3.13'",
 ]
 
+[options]
+
+[options.prerelease-package]
+tensorflow = "allow"
+
 [[package]]
 name = "absl-py"
 version = "2.5.1"
@@ -318,7 +323,7 @@ wheels = [
 
 [[package]]
 name = "keras-nightly"
-version = "3.16.0.dev2026110903"
+version = "3.16.0.dev2026111003"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "absl-py" },
@@ -330,9 +335,9 @@ dependencies = [
     { name = "packaging" },
     { name = "rich" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/06/58/3dbca55e6ef98a40be6d23c53030f28f4f2443c91b41925f52fe5a22e888/keras_nightly-3.16.0.dev2026110903.tar.gz", hash = "sha256:7b0e5c9dbac6ed4171127248e96840f17a0ac5b9b973c737ae15a1a4d066c922", size = 1324850, upload-time = "2026-11-09T03:56:41.249Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/77/7a/b00f8b7887fdcf7056cbb7705ba8b335975b8828b9dc2cb45e1bcd7ebcaf/keras_nightly-3.16.0.dev2026111003.tar.gz", hash = "sha256:f309632d896d77340988d74e3cb863b8b3fbc5101d51d9ef44439f2700a3d702", size = 1327881, upload-time = "2026-11-10T03:57:56.574Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/7b/89/9b5685e01b005912b731dfa524da6509c093e70208daf428a0d56ccd139a/keras_nightly-3.16.0.dev2026110903-py3-none-any.whl", hash = "sha256:7f77572b38adde6c87a8df61582de8e38f72db65b9b8e74dd07ff857889880e1", size = 1706849, upload-time = "2026-11-09T03:56:38.62Z" },
+    { url = "https://files.pythonhosted.org/packages/71/ad/33821bf72b756c791d01357d80c5a49b9154fbd6f1890de870ee7adf40ce/keras_nightly-3.16.0.dev2026111003-py3-none-any.whl", hash = "sha256:cd9c7667f1112c50c86b032062e186e1707e81e8452607f84b23ddd3d9f64086", size = 1709989, upload-time = "2026-11-10T03:57:54.702Z" },
 ]
 
 [[package]]
