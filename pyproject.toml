@@ -27,6 +27,11 @@ tensorflow = {allow-prereleases = true}
 [tool.uv]
 prerelease-package = { tensorflow = "allow" }
 
+[tool.yapfignore]
+ignore_patterns = [
+  ".venv/**",
+]
+
 [build-system]
 requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
