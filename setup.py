@@ -21,19 +21,14 @@ from setuptools import find_packages, setup
 with open('README.rst', 'r') as f:
     long_description = f.read()
 
-setup(name="cslbot-tjhsst",
-      description="TJHSST-specific commands for CslBot.",
-      long_description=long_description,
-      author="The TJHSST Computer Systems Lab",
-      author_email="cslbot@pefoley.com",
-      url="https://github.com/tjcsl/cslbot-tjhsst",
-      version="0.4",
-      license="GPL",
-      zip_safe=False,
-      packages=find_packages(),
-      install_requires=['CslBot', 'feedparser', 'tensorflow'],
-      classifiers=[
-          'Development Status :: 4 - Beta',
-          'License :: OSI Approved :: GNU General Public License v2 or later (GPLv2+)',
-          'Topic :: Communications :: Chat :: Internet Relay Chat',
-      ])
+setup(
+    name="cslbot-tjhsst",
+    description="TJHSST-specific commands for CslBot.",
+    long_description=long_description,
+    author="The TJHSST Computer Systems Lab",
+    author_email="cslbot@pefoley.com",
+    url="https://github.com/tjcsl/cslbot-tjhsst",
+    version="0.4",
+    zip_safe=False,
+    packages=find_packages(),
+)
